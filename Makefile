@@ -3,3 +3,6 @@ cs-fix:
 .PHONY: cs-fix-dry-run
 cs-fix-dry-run:
 	./scripts/cs-fix.sh 0
+.PHONY: php-stan
+php-stan:
+	./scripts/php-stan.sh
