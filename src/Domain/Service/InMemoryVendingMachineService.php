@@ -17,9 +17,9 @@ class InMemoryVendingMachineService implements VendingMachineService
         $this->vendingMachine = $vendingMachine;
     }
 
-    public function validateCoins(array $coins): bool
+    public function validateCoins(array $coins): void
     {
-        // TODO: Implement validateCoins() method.
+        $this->vendingMachine->validateCoins($coins);
     }
 
     public function buyProduct(Product $product, array $coins): void

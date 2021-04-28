@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Domain\Model;
 
 use App\Domain\Exception\InsufficientAvailableChangeException;
+use App\Domain\Exception\InvalidCoinsException;
 
 class VendingMachine
 {
@@ -82,7 +83,7 @@ class VendingMachine
     {
         foreach ($coins as $coin) {
             if (!in_array($coin, $this->getAvailableCoins())) {
-                throw new \Exception('Invalid coins');
+                throw new InvalidCoinsException($coins);
             }
         }
     }

@@ -8,7 +8,7 @@ use App\Domain\Model\Product;
 
 interface VendingMachineService
 {
-    public function validateCoins(array $coins): bool;
+    public function validateCoins(array $coins): void;
 
     public function buyProduct(Product $product, array $coins): void;
 

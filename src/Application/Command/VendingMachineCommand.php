@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Application\Command;
 
 use App\Application\Query\GetLastProductChangeQuery;
+use App\Domain\Exception\InvalidActionException;
+use App\Domain\Exception\InvalidArgumentsException;
 use App\Domain\Service\VendingMachineRepository;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -34,15 +36,23 @@ class VendingMachineCommand extends Command
             try {
                 $helper     = $this->getHelper('question');
                 $question   = new Question('');
-                $userAnswer = $helper->ask($input, $output, $question);
+                $userInput  = $helper->ask($input, $output, $question);
+                $userAnswer = explode(',', $userInput);
 
-                if (empty($userAnswer)) {
-                    throw new \RuntimeException('No arguments passed');
+                if (count($userAnswer) <= 1) {
+                    throw new InvalidArgumentsException($userInput);
                 }
 
-                $userAnswer = explode(',', $userAnswer);
-                $action     = trim($userAnswer[count($userAnswer) - 1]);
-                $coins      = array_slice($userAnswer, 0, -1);
+                $action                = trim($userAnswer[count($userAnswer) - 1]);
+                $isProductStockService = !is_numeric($userAnswer[count($userAnswer) - 2]);
+                if ('SERVICE' !== $action || !$isProductStockService) {
+                    $entryCoins = array_slice($userAnswer, 0, -1);
+                    $coins      = array_map(function ($coin) {
+                        return round($coin, 2);
+                    }, $entryCoins);
+
+                    $this->bus->dispatch(new ValidateCoinsCommand($coins));
+                }
 
                 switch ($action) {
                     case 'GET-SODA':
@@ -59,14 +69,17 @@ class VendingMachineCommand extends Command
                         $output->writeln(implode(', ', $response));
                         break;
                     case 'RETURN-COIN':
-                        $coins = array_slice($userAnswer, 0, -1);
-                        $output->writeln(implode(',', $coins));
+                        $output->writeln(implode(', ', $coins));
                         break;
                     case 'SERVICE':
-                        $output->writeln('service');
+                        if ($isProductStockService) {
+                            // dispatch set product service
+                        } else {
+                            // dispatch set available change
+                        }
                         break;
                     default:
-                        throw new \RuntimeException('Error!!');
+                        throw new InvalidActionException($action);
                         break;
                 }
             } catch (\Exception $exception) {
