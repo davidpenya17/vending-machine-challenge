@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Domain\Model;
 
+use App\Domain\Exception\InsufficientAvailableChangeException;
+
 class VendingMachine
 {
     private array $availableCoins;
@@ -119,7 +121,7 @@ class VendingMachine
             }
         }
         if ($productChange > 0) {
-            throw new \Exception('Insufficient available change to return');
+            throw new InsufficientAvailableChangeException($productChange, $availableCoins);
         }
 
         return $changeCoins;

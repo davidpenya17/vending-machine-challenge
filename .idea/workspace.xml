@@ -11,13 +11,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b435894-42a6-4929-be68-c36c646f335f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.php_cs.dist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Model/Juice.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Model/Product.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Model/Soda.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Model/VendingMachine.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Model/Water.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Command/BuyProductCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Command/BuyProductCommandHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Command/Command.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Command/CommandHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Query/GetLastProductChangeQuery.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Exception/ContextualizedException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Exception/InsufficientAvailableChangeException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Exception/InsufficientCoinsException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Exception/NoStockAvailableException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Service/InMemoryVendingMachineRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Service/VendingMachineRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Service/VendingMachineService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Service/VendingMachineService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Model/VendingMachine.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Model/VendingMachine.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Service/InMemoryVendingMachineService.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Service/InMemoryVendingMachineService.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,17 +98,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Application" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/Domain" />
-      <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/src/Application" />
-      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/Domain/Exception" />
+      <recent name="$PROJECT_DIR$/src/Domain/Service" />
+      <recent name="$PROJECT_DIR$/src/Application/Command" />
+      <recent name="$PROJECT_DIR$" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -114,7 +123,7 @@
       <updated>1619529801285</updated>
       <workItem from="1619529802645" duration="62000" />
       <workItem from="1619529894063" duration="4312000" />
-      <workItem from="1619599038452" duration="5203000" />
+      <workItem from="1619599038452" duration="6781000" />
     </task>
     <servers />
   </component>
@@ -138,10 +147,10 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="769" y="240" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1619531095977" />
-    <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1619602615172">
+    <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1619609359669">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1619602615172" />
+    <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1619609359669" />
     <state x="469" y="190" key="SettingsEditor" timestamp="1619602635217">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -150,9 +159,9 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="763" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1057@0.23.1920.1057" timestamp="1619599396736" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1619601116945">
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1619609406028">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1619601116945" />
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1619609406028" />
   </component>
 </project>
