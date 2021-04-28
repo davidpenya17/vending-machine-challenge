@@ -1,0 +1,22 @@
+<?php
+
+$finder = PhpCsFixer\Finder::create()
+    ->in(__DIR__ . '/src')
+;
+
+return PhpCsFixer\Config::create()
+    ->setRules([
+        '@PSR2' => true,
+        '@Symfony' => true,
+        'array_syntax' => ['syntax' => 'short'],
+        'binary_operator_spaces' => [
+            'default' => 'align_single_space_minimal',
+        ],
+        'header_comment' => [
+            'header' => '',
+        ],
+        'declare_strict_types' => true
+    ])
+    ->setRiskyAllowed(true)
+    ->setFinder($finder)
+    ;

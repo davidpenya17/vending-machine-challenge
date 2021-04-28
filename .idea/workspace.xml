@@ -11,14 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b435894-42a6-4929-be68-c36c646f335f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vending-machine-challenge.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vending-machine-challenge.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.php_cs.dist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Model/Juice.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Model/Product.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Model/Soda.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Model/VendingMachine.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Model/Water.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,15 +89,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/Domain" />
+      <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/src/Application" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
@@ -115,7 +114,7 @@
       <updated>1619529801285</updated>
       <workItem from="1619529802645" duration="62000" />
       <workItem from="1619529894063" duration="4312000" />
-      <workItem from="1619599038452" duration="3278000" />
+      <workItem from="1619599038452" duration="5203000" />
     </task>
     <servers />
   </component>

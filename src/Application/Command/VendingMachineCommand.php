@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 namespace App\Application\Command;
 
 use Symfony\Component\Console\Command\Command;
@@ -23,19 +26,17 @@ class VendingMachineCommand extends Command
     {
         while (true) {
             try {
-                $helper = $this->getHelper('question');
-                $question = new Question('');
+                $helper     = $this->getHelper('question');
+                $question   = new Question('');
                 $userAnswer = $helper->ask($input, $output, $question);
 
                 if (empty($userAnswer)) {
-                    throw new \RuntimeException(
-                        'No arguments passed'
-                    );
+                    throw new \RuntimeException('No arguments passed');
                 }
 
                 $userAnswer = explode(',', $userAnswer);
-                $action = trim($userAnswer[count($userAnswer) - 1]);
-                $coins = array_slice($userAnswer, 0, -1);
+                $action     = trim($userAnswer[count($userAnswer) - 1]);
+                $coins      = array_slice($userAnswer, 0, -1);
 
                 switch ($action) {
                     case 'GET-SODA':
@@ -46,15 +47,13 @@ class VendingMachineCommand extends Command
                         break;
                     case 'RETURN-COIN':
                         $coins = array_slice($userAnswer, 0, -1);
-                        $output->writeln(implode(",", $coins));
+                        $output->writeln(implode(',', $coins));
                         break;
                     case 'SERVICE':
                         $output->writeln('service');
                         break;
                     default:
-                        throw new \RuntimeException(
-                            'Error!!'
-                        );
+                        throw new \RuntimeException('Error!!');
                         break;
                 }
             } catch (\Exception $exception) {
