@@ -6,3 +6,6 @@ cs-fix-dry-run:
 .PHONY: php-stan
 php-stan:
 	./scripts/php-stan.sh
+.PHONY: phpspec
+phpspec:
+	./scripts/phpspec.sh

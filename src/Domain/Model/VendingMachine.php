@@ -6,6 +6,7 @@ namespace App\Domain\Model;
 
 use App\Domain\Exception\InsufficientAvailableChangeException;
 use App\Domain\Exception\InvalidCoinsException;
+use App\Domain\Exception\InvalidProductNameException;
 
 class VendingMachine
 {
@@ -75,7 +76,7 @@ class VendingMachine
             case Product::SODA:
                 return $this->getSoda();
             default:
-                throw new \Exception('Invalid product name');
+                throw new InvalidProductNameException($productName);
         }
     }
 
@@ -117,8 +118,8 @@ class VendingMachine
         });
         foreach ($availableCoins as $index => $availableCoin) {
             if ($availableCoin <= $productChange) {
-                $changeCoins[] = number_format($availableCoin, 2);
-                $productChange = number_format($productChange - $availableCoin, 2);
+                $changeCoins[] = round($availableCoin, 2);
+                $productChange = round($productChange - $availableCoin, 2);
             }
         }
         if ($productChange > 0) {
@@ -137,7 +138,7 @@ class VendingMachine
                 unset($availableCoins[$availableCoinIndex]);
             }
         }
-        $this->setAvailableChange($availableCoins);
+        $this->setAvailableChange(array_values($availableCoins));
     }
 
     public function addCoins(array $coins): void
