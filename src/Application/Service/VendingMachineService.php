@@ -1,8 +1,8 @@
 <?php
 namespace App\Application\Service;
 
-interface VendingMachineService {
-
+interface VendingMachineService
+{
     public function validateCoins(array $coins): bool;
 
     public function buyItem(string $productName, array $coins): array;

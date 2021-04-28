@@ -5,7 +5,6 @@ use App\Application\Service\VendingMachineService;
 
 class InMemoryVendingMachineService implements VendingMachineService
 {
-
     public function validateCoins(array $coins): bool
     {
         // TODO: Implement validateCoins() method.

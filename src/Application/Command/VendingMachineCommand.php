@@ -19,7 +19,7 @@ class VendingMachineCommand extends Command
     {
         while (true) {
             $helper = $this->getHelper('question');
-            $question = new Question('' );
+            $question = new Question('');
             $userAnswer = $helper->ask($input, $output, $question);
 
             if (empty($userAnswer)) {
