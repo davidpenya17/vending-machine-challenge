@@ -21,6 +21,37 @@ class VendingMachineCommand extends Command
             $helper = $this->getHelper('question');
             $question = new Question('' );
             $userAnswer = $helper->ask($input, $output, $question);
+
+            if (empty($userAnswer)) {
+                throw new \RuntimeException(
+                    'No arguments passed'
+                );
+            }
+
+            $userAnswer = explode(',', $userAnswer);
+            $action = trim($userAnswer[count($userAnswer) - 1]);
+            $coins = array_slice($userAnswer, 0, -1);
+
+            switch ($action) {
+                case 'GET-SODA':
+                case 'GET-WATER':
+                case 'GET-JUICE':
+                    $product = explode('-', $action)[1];
+                    $output->writeln($product);
+                    break;
+                case 'RETURN-COIN':
+                    $coins = array_slice($userAnswer, 0, -1);
+                    $output->writeln(implode(",", $coins));
+                    break;
+                case 'SERVICE':
+                    $output->writeln('service');
+                    break;
+                default:
+                    throw new \RuntimeException(
+                        'Error!!'
+                    );
+                    break;
+            }
         }
     }
 }

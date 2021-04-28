@@ -11,14 +11,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b435894-42a6-4929-be68-c36c646f335f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Service/VendingMachineService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Service/InMemoryVendingMachineService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -71,11 +75,14 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Domain" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Domain" />
+      <recent name="$PROJECT_DIR$/src/Application" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -90,7 +97,8 @@
       <option name="presentableId" value="Default" />
       <updated>1619529801285</updated>
       <workItem from="1619529802645" duration="62000" />
-      <workItem from="1619529894063" duration="254000" />
+      <workItem from="1619529894063" duration="4312000" />
+      <workItem from="1619599038452" duration="99000" />
     </task>
     <servers />
   </component>
@@ -110,9 +118,17 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="769" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1619531095977">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="769" y="240" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1619531095977" />
     <state x="469" y="190" key="SettingsEditor" timestamp="1619529952299">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="469" y="190" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1619529952299" />
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1619532541918">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1619532541918" />
   </component>
 </project>
