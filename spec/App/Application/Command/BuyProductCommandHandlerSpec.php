@@ -35,13 +35,9 @@ class BuyProductCommandHandlerSpec extends ObjectBehavior
         //Given
         $productName = 'WATER';
         $coins       = [1];
-        $stock       = 10;
-        $price       = 1;
         $vendingMachineRepository->getVendingMachine()->willReturn($vendingMachine);
         $vendingMachine->getProductByName($productName)->willReturn($product);
-        $product->getStock()->willReturn($stock);
-        $product->getPrice()->willReturn($price);
-        $product->getName()->willReturn($productName);
+        $vendingMachine->validateCoins($coins)->shouldBeCalled();
 
         //Then
         $vendingMachine->buyProduct($product, $coins)->shouldBeCalled();
@@ -77,11 +73,10 @@ class BuyProductCommandHandlerSpec extends ObjectBehavior
         //Given
         $productName = 'WATER';
         $coins       = [1];
-        $stock       = 0;
         $vendingMachineRepository->getVendingMachine()->willReturn($vendingMachine);
         $vendingMachine->getProductByName($productName)->willReturn($product);
-        $product->getStock()->willReturn($stock);
-        $product->getName()->willReturn($productName);
+        $vendingMachine->validateCoins($coins)->shouldBeCalled();
+        $vendingMachine->buyProduct($product, $coins)->willThrow(NoStockAvailableException::class);
 
         //Then
         $this->shouldThrow(NoStockAvailableException::class)
@@ -100,13 +95,10 @@ class BuyProductCommandHandlerSpec extends ObjectBehavior
         //Given
         $productName = 'WATER';
         $coins       = [0.25, 0.25, 0.25];
-        $stock       = 10;
-        $price       = 1;
         $vendingMachineRepository->getVendingMachine()->willReturn($vendingMachine);
         $vendingMachine->getProductByName($productName)->willReturn($product);
-        $product->getStock()->willReturn($stock);
-        $product->getName()->willReturn($productName);
-        $product->getPrice()->willReturn($price);
+        $vendingMachine->validateCoins($coins)->shouldBeCalled();
+        $vendingMachine->buyProduct($product, $coins)->willThrow(InsufficientCoinsException::class);
 
         //Then
         $this->shouldThrow(InsufficientCoinsException::class)
@@ -126,13 +118,9 @@ class BuyProductCommandHandlerSpec extends ObjectBehavior
         $vendingMachine->setAvailableChange([1, 0.25, 0.05]);
         $productName = 'WATER';
         $coins       = [1];
-        $stock       = 10;
-        $price       = 1;
         $vendingMachineRepository->getVendingMachine()->willReturn($vendingMachine);
         $vendingMachine->getProductByName($productName)->willReturn($product);
-        $product->getStock()->willReturn($stock);
-        $product->getName()->willReturn($productName);
-        $product->getPrice()->willReturn($price);
+        $vendingMachine->validateCoins($coins)->shouldBeCalled();
 
         //When
         $vendingMachine->buyProduct($product, $coins)->willThrow(InsufficientAvailableChangeException::class);

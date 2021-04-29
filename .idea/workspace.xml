@@ -11,16 +11,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b435894-42a6-4929-be68-c36c646f335f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/App/Application/Command/BuyProductCommandHandlerSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Application/Command/BuyProductCommandHandlerSpec.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Command/BuyProductCommandHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Command/BuyProductCommandHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Command/ValidateCoinsCommand.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Command/ValidateCoinsCommandHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/App/Domain/Model/VendingMachineSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Domain/Model/VendingMachineSpec.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Service/VendingMachineService.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Model/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Model/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Model/VendingMachine.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Model/VendingMachine.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Service/InMemoryVendingMachineService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Service/InMemoryVendingMachineRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Service/InMemoryVendingMachineRepository.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +99,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/spec/App" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
@@ -132,7 +129,8 @@
       <updated>1619529801285</updated>
       <workItem from="1619529802645" duration="62000" />
       <workItem from="1619529894063" duration="4312000" />
-      <workItem from="1619599038452" duration="11866000" />
+      <workItem from="1619599038452" duration="14116000" />
+      <workItem from="1619702597581" duration="663000" />
     </task>
     <servers />
   </component>
@@ -160,10 +158,10 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1619693072656" />
-    <state x="469" y="190" key="SettingsEditor" timestamp="1619629356156">
+    <state x="469" y="190" key="SettingsEditor" timestamp="1619702608076">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="469" y="190" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1619629356156" />
+    <state x="469" y="190" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1619702608076" />
     <state x="763" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619599396736">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
