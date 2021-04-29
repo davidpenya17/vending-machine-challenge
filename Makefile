@@ -9,3 +9,6 @@ php-stan:
 .PHONY: phpspec
 phpspec:
 	./scripts/phpspec.sh
+.PHONY: phpunit
+phpunit:
+	./scripts/phpunit.sh

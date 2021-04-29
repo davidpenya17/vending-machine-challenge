@@ -11,15 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b435894-42a6-4929-be68-c36c646f335f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/spec/App/Application/Command/SetAvailableChangeCommandHandlerSpec.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/App/Application/Command/SetProductStockCommandHandlerSpec.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Command/SetAvailableChangeCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Command/SetAvailableChangeCommandHandler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Command/SetProductStockCommand.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Command/SetProductStockCommandHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/phpunit.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Application/Command/BuyProductCommandHandlerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vending-machine-challenge.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vending-machine-challenge.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Exception/InvalidArgumentsException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Exception/InvalidArgumentsException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +93,7 @@
       <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
       <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
     </include_path>
   </component>
   <component name="ProjectId" id="1rkpAquLJewaKsu4IXCX0YnvT2i" />
@@ -104,20 +106,20 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/spec/App/Application/Command" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spec/App/Application" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/scripts" />
+      <recent name="$PROJECT_DIR$/tests" />
       <recent name="$PROJECT_DIR$/spec/App/Application/Command" />
       <recent name="$PROJECT_DIR$/src/Application/Command" />
       <recent name="$PROJECT_DIR$/spec/App" />
-      <recent name="$PROJECT_DIR$/scripts" />
-      <recent name="$PROJECT_DIR$/src/Domain/Exception" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/spec/App/Application" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -133,7 +135,8 @@
       <workItem from="1619529802645" duration="62000" />
       <workItem from="1619529894063" duration="4312000" />
       <workItem from="1619599038452" duration="14116000" />
-      <workItem from="1619702597581" duration="2885000" />
+      <workItem from="1619702597581" duration="4402000" />
+      <workItem from="1619711971560" duration="102000" />
     </task>
     <servers />
   </component>
