@@ -89,22 +89,24 @@ class VendingMachine
         }
     }
 
-    public function buyProduct(Product $product, array $coins)
+    public function buyProduct(Product $product, array $coins): void
     {
-        // add coins
-        $this->addCoins($coins);
+        if ($product->isAvailableToBuy($coins)) {
+            // add coins
+            $this->addCoins($coins);
 
-        // calculate product change
-        $productChange = $this->calculateProductChange($product->getPrice(), $coins);
-        if (!empty($productChange)) {
-            $this->removeCoins($productChange);
+            // calculate product change
+            $productChange = $this->calculateProductChange($product->getPrice(), $coins);
+            if (!empty($productChange)) {
+                $this->removeCoins($productChange);
+            }
+
+            // set product change
+            $this->setLastProductChange($productChange);
+
+            // remove product
+            $product->removeProductFromStock();
         }
-        $this->setLastProductChange($productChange);
-
-        // remove product
-        $product->removeProductFromStock();
-
-        return $productChange;
     }
 
     public function calculateProductChange(float $price, array $coins): array

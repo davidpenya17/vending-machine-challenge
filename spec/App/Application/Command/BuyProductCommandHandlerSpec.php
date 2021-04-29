@@ -6,7 +6,6 @@ namespace spec\App\Application\Command;
 
 use App\Application\Command\BuyProductCommand;
 use App\Application\Command\BuyProductCommandHandler;
-use App\Application\Service\VendingMachineService;
 use App\Domain\Exception\InsufficientAvailableChangeException;
 use App\Domain\Exception\InsufficientCoinsException;
 use App\Domain\Exception\InvalidProductNameException;
@@ -18,9 +17,9 @@ use PhpSpec\ObjectBehavior;
 
 class BuyProductCommandHandlerSpec extends ObjectBehavior
 {
-    public function let(VendingMachineService $vendingMachineService, VendingMachineRepository $vendingMachineRepository)
+    public function let(VendingMachineRepository $vendingMachineRepository)
     {
-        $this->beConstructedWith($vendingMachineService, $vendingMachineRepository);
+        $this->beConstructedWith($vendingMachineRepository);
     }
 
     public function it_is_initializable()
@@ -30,7 +29,6 @@ class BuyProductCommandHandlerSpec extends ObjectBehavior
 
     public function it_should_buy_product(
         VendingMachineRepository $vendingMachineRepository,
-        VendingMachineService $vendingMachineService,
         VendingMachine $vendingMachine,
         Product $product)
     {
@@ -46,7 +44,7 @@ class BuyProductCommandHandlerSpec extends ObjectBehavior
         $product->getName()->willReturn($productName);
 
         //Then
-        $vendingMachineService->buyProduct($product, $coins)->shouldBeCalled();
+        $vendingMachine->buyProduct($product, $coins)->shouldBeCalled();
 
         //When
         $this->__invoke(new BuyProductCommand($productName, $coins));
@@ -121,7 +119,6 @@ class BuyProductCommandHandlerSpec extends ObjectBehavior
 
     public function it_should_throw_insufficient_available_change(
         VendingMachineRepository $vendingMachineRepository,
-        VendingMachineService $vendingMachineService,
         VendingMachine $vendingMachine,
         Product $product)
     {
@@ -138,7 +135,7 @@ class BuyProductCommandHandlerSpec extends ObjectBehavior
         $product->getPrice()->willReturn($price);
 
         //When
-        $vendingMachineService->buyProduct($product, $coins)->willThrow(InsufficientAvailableChangeException::class);
+        $vendingMachine->buyProduct($product, $coins)->willThrow(InsufficientAvailableChangeException::class);
 
         //Then
         $this->shouldThrow(InsufficientAvailableChangeException::class)

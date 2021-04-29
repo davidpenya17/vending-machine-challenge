@@ -43,22 +43,16 @@ class VendingMachineCommand extends Command
                     throw new InvalidArgumentsException($userInput);
                 }
 
-                $action                = trim($userAnswer[count($userAnswer) - 1]);
-                $isProductStockService = !is_numeric($userAnswer[count($userAnswer) - 2]);
-                if ('SERVICE' !== $action || !$isProductStockService) {
-                    $entryCoins = array_slice($userAnswer, 0, -1);
-                    $coins      = array_map(function ($coin) {
-                        return round($coin, 2);
-                    }, $entryCoins);
-
-                    $this->bus->dispatch(new ValidateCoinsCommand($coins));
-                }
-
+                $action = trim($userAnswer[count($userAnswer) - 1]);
                 switch ($action) {
                     case 'GET-SODA':
                     case 'GET-WATER':
                     case 'GET-JUICE':
-                        $product = explode('-', $action)[1];
+                        $product    = explode('-', $action)[1];
+                        $entryCoins = array_slice($userAnswer, 0, -1);
+                        $coins      = array_map(function ($coin) {
+                            return round($coin, 2);
+                        }, $entryCoins);
                         $this->bus->dispatch(new BuyProductCommand(
                             $product,
                             $coins
@@ -69,9 +63,14 @@ class VendingMachineCommand extends Command
                         $output->writeln(implode(', ', $response));
                         break;
                     case 'RETURN-COIN':
+                        $entryCoins = array_slice($userAnswer, 0, -1);
+                        $coins      = array_map(function ($coin) {
+                            return round($coin, 2);
+                        }, $entryCoins);
                         $output->writeln(implode(', ', $coins));
                         break;
                     case 'SERVICE':
+                        $isProductStockService = !is_numeric($userAnswer[count($userAnswer) - 2]);
                         if ($isProductStockService) {
                             // dispatch set product service
                         } else {

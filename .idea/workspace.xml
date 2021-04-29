@@ -12,8 +12,15 @@
   <component name="ChangeListManager">
     <list default="true" id="2b435894-42a6-4929-be68-c36c646f335f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.php_cs.dist" beforeDir="false" afterPath="$PROJECT_DIR$/.php_cs.dist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/cs-fix.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/cs-fix.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/App/Application/Command/BuyProductCommandHandlerSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Application/Command/BuyProductCommandHandlerSpec.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Command/BuyProductCommandHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Command/BuyProductCommandHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Command/ValidateCoinsCommand.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Command/ValidateCoinsCommandHandler.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Service/VendingMachineService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Model/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Model/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Model/VendingMachine.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Model/VendingMachine.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Service/InMemoryVendingMachineService.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +132,7 @@
       <updated>1619529801285</updated>
       <workItem from="1619529802645" duration="62000" />
       <workItem from="1619529894063" duration="4312000" />
-      <workItem from="1619599038452" duration="10537000" />
+      <workItem from="1619599038452" duration="11866000" />
     </task>
     <servers />
   </component>
@@ -149,10 +156,10 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="769" y="240" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1619531095977" />
-    <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1619629263113">
+    <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1619693072657">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1619629263113" />
+    <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1619693072656" />
     <state x="469" y="190" key="SettingsEditor" timestamp="1619629356156">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>

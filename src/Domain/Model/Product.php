@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace App\Domain\Model;
 
+use App\Domain\Exception\InsufficientCoinsException;
+use App\Domain\Exception\NoStockAvailableException;
+
 abstract class Product
 {
     const WATER       = 'WATER';
@@ -42,5 +45,18 @@ abstract class Product
     public function removeProductFromStock(): void
     {
         --$this->stock;
+    }
+
+    public function isAvailableToBuy(array $coins): bool
+    {
+        if (0 === $this->getStock()) {
+            throw new NoStockAvailableException($this->getName(), $this->getStock());
+        }
+
+        if (array_sum($coins) < $this->getPrice()) {
+            throw new InsufficientCoinsException($this->getName(), $coins);
+        }
+
+        return true;
     }
 }
