@@ -11,16 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b435894-42a6-4929-be68-c36c646f335f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/phpunit.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Application/Command/BuyProductCommandHandlerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vending-machine-challenge.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vending-machine-challenge.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Model/VendingMachine.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Model/VendingMachine.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +129,7 @@
       <workItem from="1619529894063" duration="4312000" />
       <workItem from="1619599038452" duration="14116000" />
       <workItem from="1619702597581" duration="4402000" />
-      <workItem from="1619711971560" duration="102000" />
+      <workItem from="1619711971560" duration="682000" />
     </task>
     <servers />
   </component>
@@ -156,18 +149,18 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="769" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1619531095977">
+    <state x="769" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1619712647792">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="769" y="240" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1619531095977" />
+    <state x="769" y="240" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1619712647792" />
     <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1619704571028">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1619704571028" />
-    <state x="469" y="190" key="SettingsEditor" timestamp="1619702608076">
+    <state x="469" y="190" key="SettingsEditor" timestamp="1619712585680">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="469" y="190" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1619702608076" />
+    <state x="469" y="190" key="SettingsEditor/0.23.1920.1057@0.23.1920.1057" timestamp="1619712585680" />
     <state x="763" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619599396736">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>

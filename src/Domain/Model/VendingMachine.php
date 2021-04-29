@@ -13,18 +13,18 @@ class VendingMachine
     private array $availableCoins;
     private array $availableChange;
     private array $lastProductChange;
-    private Water $water;
-    private Juice $juice;
-    private Soda $soda;
+    private array $products;
 
     public function __construct()
     {
         $this->availableCoins    = [1, 0.25, 0.10, 0.05];
         $this->availableChange   = [0.05, 0.05, 0.10, 0.10, 0.25, 0.25, 1, 1];
         $this->lastProductChange = [];
-        $this->water             = new Water(10);
-        $this->juice             = new Juice(10);
-        $this->soda              = new Soda(10);
+        $this->products          = [
+            new Water(10),
+            new Juice(10),
+            new Soda(10),
+        ];
     }
 
     /**
@@ -51,33 +51,20 @@ class VendingMachine
         return $this->lastProductChange;
     }
 
-    public function getWater(): Water
+    public function getProducts(): array
     {
-        return $this->water;
-    }
-
-    public function getJuice(): Juice
-    {
-        return $this->juice;
-    }
-
-    public function getSoda(): Soda
-    {
-        return $this->soda;
+        return $this->products;
     }
 
     public function getProductByName(string $productName): Product
     {
-        switch ($productName) {
-            case Product::JUICE:
-                return $this->getJuice();
-            case Product::WATER:
-                return $this->getWater();
-            case Product::SODA:
-                return $this->getSoda();
-            default:
-                throw new InvalidProductNameException($productName);
+        foreach ($this->getProducts() as $product) {
+            if ($product->getName() === $productName) {
+                return $product;
+            }
         }
+
+        throw new InvalidProductNameException($productName);
     }
 
     public function validateCoins(array $coins): void
