@@ -27,26 +27,17 @@ class VendingMachine
         ];
     }
 
-    /**
-     * @return array
-     */
-    public function getAvailableCoins()
+    public function getAvailableCoins(): array
     {
         return $this->availableCoins;
     }
 
-    /**
-     * @return array
-     */
-    public function getAvailableChange()
+    public function getAvailableChange(): array
     {
         return $this->availableChange;
     }
 
-    /**
-     * @return array
-     */
-    public function getLastProductChange()
+    public function getLastProductChange(): array
     {
         return $this->lastProductChange;
     }
@@ -54,6 +45,16 @@ class VendingMachine
     public function getProducts(): array
     {
         return $this->products;
+    }
+
+    public function setAvailableChange(array $coins): void
+    {
+        $this->availableChange = $coins;
+    }
+
+    public function setLastProductChange(array $coins): void
+    {
+        $this->lastProductChange = $coins;
     }
 
     public function getProductByName(string $productName): Product
@@ -133,15 +134,5 @@ class VendingMachine
     public function addCoins(array $coins): void
     {
         $this->setAvailableChange(array_merge($this->getAvailableChange(), $coins));
-    }
-
-    public function setAvailableChange(array $coins): void
-    {
-        $this->availableChange = $coins;
-    }
-
-    public function setLastProductChange(array $coins): void
-    {
-        $this->lastProductChange = $coins;
     }
 }
