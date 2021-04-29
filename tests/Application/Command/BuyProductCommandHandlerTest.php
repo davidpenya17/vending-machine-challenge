@@ -8,9 +8,10 @@ use App\Application\Command\BuyProductCommand;
 use App\Application\Command\BuyProductCommandHandler;
 use App\Domain\Exception\InsufficientAvailableChangeException;
 use App\Domain\Exception\InsufficientCoinsException;
-use App\Domain\Exception\InvalidCoinsException;
+use App\Domain\Exception\InvalidCoinException;
 use App\Domain\Exception\InvalidProductNameException;
 use App\Domain\Exception\NoStockAvailableException;
+use App\Domain\Model\Coin;
 use App\Domain\Model\VendingMachine;
 use App\Domain\Service\VendingMachineRepository;
 use PHPUnit\Framework\TestCase;
@@ -54,7 +55,7 @@ class BuyProductCommandHandlerTest extends TestCase
 
         //When
         $this->vendingMachineRepositoryMock->method('getVendingMachine')->willReturn($vendingMachine);
-        $this->expectException(InvalidCoinsException::class);
+        $this->expectException(InvalidCoinException::class);
 
         //Then
         $handler = new BuyProductCommandHandler($this->vendingMachineRepositoryMock);
@@ -71,8 +72,11 @@ class BuyProductCommandHandlerTest extends TestCase
         $vendingMachine = new VendingMachine();
         $productName = 'WATER';
         $coins = [1];
-        $availableChange = [1, 0.25, 0.05];
-        $vendingMachine->setAvailableChange($availableChange);
+        $coin1          = new Coin(1);
+        $coin2          = new Coin(0.25);
+        $coin3          = new Coin(0.05);
+        $availableChange = [$coin1, $coin2, $coin3];
+        $vendingMachine->setAvailableCoins($availableChange);
 
         //When
         $this->vendingMachineRepositoryMock->method('getVendingMachine')->willReturn($vendingMachine);

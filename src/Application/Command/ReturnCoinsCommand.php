@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Application\Command;
 
-class SetAvailableChangeCommand implements Command
+class ReturnCoinsCommand implements Command
 {
     private array $coins;
 

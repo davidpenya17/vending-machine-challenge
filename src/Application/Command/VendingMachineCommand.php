@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Application\Command;
 
+use App\Application\Query\GetLastCoinsQuery;
 use App\Application\Query\GetLastProductChangeQuery;
 use App\Domain\Exception\InvalidActionException;
 use App\Domain\Exception\InvalidArgumentsException;
@@ -17,15 +18,18 @@ class VendingMachineCommand extends Command
 {
     private MessageBusInterface $bus;
     private GetLastProductChangeQuery $getLastProductChangeQuery;
+    private GetLastCoinsQuery $getLastCoinsQuery;
 
     protected static $defaultName = 'app:vending-machine';
 
     public function __construct(
         MessageBusInterface $bus,
-        GetLastProductChangeQuery $getLastProductChangeQuery)
+        GetLastProductChangeQuery $getLastProductChangeQuery,
+        GetLastCoinsQuery $getLastCoinsQuery)
     {
         $this->bus                       = $bus;
         $this->getLastProductChangeQuery = $getLastProductChangeQuery;
+        $this->getLastCoinsQuery         = $getLastCoinsQuery;
         parent::__construct();
     }
 
@@ -65,6 +69,10 @@ class VendingMachineCommand extends Command
                         $coins      = array_map(function ($coin) {
                             return round($coin, 2);
                         }, $entryCoins);
+                        $this->bus->dispatch(new ReturnCoinsCommand(
+                            $coins
+                        ));
+                        $coins = $this->getLastCoinsQuery->getResult();
                         $output->writeln(implode(', ', $coins));
                         break;
                     case 'SERVICE':
@@ -82,7 +90,7 @@ class VendingMachineCommand extends Command
                             $coins      = array_map(function ($coin) {
                                 return round($coin, 2);
                             }, $entryCoins);
-                            $this->bus->dispatch(new SetAvailableChangeCommand($coins));
+                            $this->bus->dispatch(new SetAvailableCoinsCommand($coins));
                             $response = 'AVAILABLE-CHANGE, '.implode(', ', $coins);
                             $output->writeln($response);
                         }

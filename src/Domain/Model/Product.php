@@ -53,8 +53,12 @@ abstract class Product
             throw new NoStockAvailableException($this->getName(), $this->getStock());
         }
 
-        if (array_sum($coins) < $this->getPrice()) {
-            throw new InsufficientCoinsException($this->getName(), $coins);
+        $totalAmountCoins = 0;
+        foreach ($coins as $coin) {
+            $totalAmountCoins += $coin->getValue();
+        }
+        if ($totalAmountCoins < $this->getPrice()) {
+            throw new InsufficientCoinsException($this->getName(), $this->getPrice(), $totalAmountCoins);
         }
 
         return true;

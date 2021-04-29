@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace spec\App\Domain\Model;
 
 use App\Domain\Exception\InsufficientAvailableChangeException;
-use App\Domain\Exception\InvalidCoinsException;
 use App\Domain\Exception\InvalidProductNameException;
+use App\Domain\Model\Coin;
 use App\Domain\Model\VendingMachine;
 use PhpSpec\ObjectBehavior;
 
@@ -40,39 +40,32 @@ class VendingMachineSpec extends ObjectBehavior
             ->during('getProductByName', [$productName]);
     }
 
-    public function it_should_throw_invalid_coins()
-    {
-        //Given
-        $coins = [1, 2];
-
-        //When
-        $this->shouldThrow(InvalidCoinsException::class)
-            //Then
-            ->during('validateCoins', [$coins]);
-    }
-
     public function it_should_return_correct_change()
     {
         //Given
-        $coins  = [1];
-        $price  = 0.65;
-        $change = [0.25, 0.10];
+        $coin3 = new Coin(1);
+        $coins = [$coin3];
+        $price = 0.65;
 
         //When
-        $productChange = $this->calculateProductChange($price, $coins);
+        $change = $this->calculateProductChange($price, $coins);
 
         //Then
-        $productChange->shouldBe($change);
+        $this->getLastProductChange()->shouldReturn($change);
     }
 
     public function it_should_throw_insufficient_available_change()
     {
         //Given
-        $coins = [1];
-        $price = 0.65;
+        $coin1          = new Coin(1);
+        $coin2          = new Coin(0.10);
+        $coin3          = new Coin(0.05);
+        $coins          = [$coin1];
+        $availableCoins = [$coin1, $coin2, $coin3];
+        $price          = 0.65;
 
         //When
-        $this->setAvailableChange([1, 0.10, 0.05]);
+        $this->setAvailableCoins($availableCoins);
 
         //Then
         $this->shouldThrow(InsufficientAvailableChangeException::class)
@@ -83,27 +76,35 @@ class VendingMachineSpec extends ObjectBehavior
     public function it_should_remove_coins()
     {
         //Given
-        $coins          = [1, 0.25, 0.10];
-        $availableCoins = [0.05, 0.05, 0.10, 0.25, 1];
+        $coin1          = new Coin(1);
+        $coin2          = new Coin(0.25);
+        $coin3          = new Coin(0.10);
+        $coin4          = new Coin(0.05);
+        $coins          = [$coin1, $coin2, $coin3];
+        $availableCoins = [$coin4, $coin4, $coin3, $coin2, $coin1];
 
         //When
         $this->removeCoins($coins);
 
         //Then
-        $this->getAvailableChange()->shouldBe($availableCoins);
+        $this->getAvailableCoins()->shouldReturn($availableCoins);
     }
 
     public function it_should_add_coins()
     {
         //Given
-        $coins          = [1, 0.25];
-        $availableCoins = [0.05, 0.05, 0.10, 0.10, 0.25, 0.25, 1, 1, 1, 0.25];
+        $coin1          = new Coin(1);
+        $coin2          = new Coin(0.25);
+        $coin3          = new Coin(0.10);
+        $coin4          = new Coin(0.05);
+        $coins          = [$coin1, $coin2];
+        $availableCoins = [$coin4, $coin4, $coin3, $coin3, $coin2, $coin2, $coin1, $coin1, $coin1, $coin2];
 
         //When
         $this->addCoins($coins);
 
         //Then
-        $this->getAvailableChange()->shouldBe($availableCoins);
+        $this->getAvailableCoins()->shouldBe($availableCoins);
     }
 
     public function it_should_set_available_change()
@@ -112,10 +113,10 @@ class VendingMachineSpec extends ObjectBehavior
         $coins = [1, 0.25];
 
         //When
-        $this->setAvailableChange($coins);
+        $this->setAvailableCoins($coins);
 
         //Then
-        $this->getAvailableChange()->shouldBe($coins);
+        $this->getAvailableCoins()->shouldBe($coins);
     }
 
     public function it_should_set_last_product_change()

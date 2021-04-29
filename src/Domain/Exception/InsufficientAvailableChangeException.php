@@ -6,11 +6,10 @@ namespace App\Domain\Exception;
 
 class InsufficientAvailableChangeException extends ContextualizedException
 {
-    public function __construct(float $productChange, array $availableChange)
+    public function __construct(float $productChange)
     {
         parent::__construct('Insufficient available change to return', [
-            'productChange'  => $productChange,
-            'availableChane' => $availableChange,
+            'productChange' => $productChange,
         ]);
     }
 }

@@ -11,8 +11,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b435894-42a6-4929-be68-c36c646f335f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Application/Command/ReturnCoinsCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Command/ReturnCoinsCommandHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Query/GetLastCoinsQuery.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Exception/InvalidCoinException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Domain/Model/Coin.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/App/Application/Command/BuyProductCommandHandlerSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Application/Command/BuyProductCommandHandlerSpec.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/App/Application/Command/SetAvailableChangeCommandHandlerSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Application/Command/SetAvailableCoinsCommandHandlerSpec.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/App/Domain/Model/VendingMachineSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Domain/Model/VendingMachineSpec.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Command/BuyProductCommandHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Command/BuyProductCommandHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Command/SetAvailableChangeCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Command/SetAvailableCoinsCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Command/SetAvailableChangeCommandHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Command/SetAvailableCoinsCommandHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Application/Query/GetLastProductChangeQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Query/GetLastProductChangeQuery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Exception/InsufficientAvailableChangeException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Exception/InsufficientAvailableChangeException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Exception/InsufficientCoinsException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Exception/InsufficientCoinsException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Model/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Model/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Model/VendingMachine.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Model/VendingMachine.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Application/Command/BuyProductCommandHandlerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application/Command/BuyProductCommandHandlerTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +115,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Application/Query" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
@@ -107,11 +124,11 @@
       <recent name="$PROJECT_DIR$/spec/App/Application" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/scripts" />
-      <recent name="$PROJECT_DIR$/tests" />
-      <recent name="$PROJECT_DIR$/spec/App/Application/Command" />
+      <recent name="$PROJECT_DIR$/src/Application/Query" />
+      <recent name="$PROJECT_DIR$/src/Domain/Exception" />
+      <recent name="$PROJECT_DIR$/src/Domain/Model" />
       <recent name="$PROJECT_DIR$/src/Application/Command" />
-      <recent name="$PROJECT_DIR$/spec/App" />
+      <recent name="$PROJECT_DIR$/scripts" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -128,7 +145,7 @@
       <workItem from="1619529894063" duration="4312000" />
       <workItem from="1619599038452" duration="14116000" />
       <workItem from="1619702597581" duration="4402000" />
-      <workItem from="1619711971560" duration="1042000" />
+      <workItem from="1619711971560" duration="6326000" />
     </task>
     <servers />
   </component>
@@ -152,9 +169,10 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="769" y="240" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1619712647792" />
-    <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1619704571028">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="524" y="264" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1619729214768">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
+    <state x="524" y="264" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.877@0.23.1440.877" timestamp="1619729214768" />
     <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1619704571028" />
     <state x="469" y="190" key="SettingsEditor" timestamp="1619712585680">
       <screen x="0" y="23" width="1920" height="1057" />
@@ -164,13 +182,19 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="763" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1057@0.23.1920.1057" timestamp="1619599396736" />
-    <state x="667" y="306" width="586" height="490" key="find.popup" timestamp="1619703715120">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="500" y="258" width="568" height="490" key="find.popup" timestamp="1619729148137">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
+    <state x="500" y="258" width="568" height="490" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1619729148137" />
     <state x="667" y="306" width="586" height="490" key="find.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1619703715120" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1619609406028">
-      <screen x="0" y="23" width="1920" height="1057" />
+    <state x="385" y="211" key="run.anything.popup" timestamp="1619727034021">
+      <screen x="0" y="23" width="1440" height="877" />
     </state>
+    <state x="385" y="211" key="run.anything.popup/0.23.1440.877@0.23.1440.877" timestamp="1619727034021" />
+    <state x="469" y="218" width="670" height="561" key="search.everywhere.popup" timestamp="1619726472336">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="469" y="218" width="670" height="561" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1619726472336" />
     <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1619609406028" />
   </component>
 </project>

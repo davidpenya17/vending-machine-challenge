@@ -6,7 +6,7 @@ namespace App\Application\Command;
 
 use App\Domain\Service\VendingMachineRepository;
 
-class BuyProductCommandHandler implements CommandHandler
+class ReturnCoinsCommandHandler implements CommandHandler
 {
     private VendingMachineRepository $vendingMachineRepository;
 
@@ -15,11 +15,11 @@ class BuyProductCommandHandler implements CommandHandler
         $this->vendingMachineRepository = $vendingMachineRepository;
     }
 
-    public function __invoke(BuyProductCommand $command): void
+    public function __invoke(ReturnCoinsCommand $command): void
     {
         $vendingMachine = $this->vendingMachineRepository->getVendingMachine();
-        $product        = $vendingMachine->getProductByName($command->getProductName());
 
-        $vendingMachine->buyProduct($product, $command->getCoins());
+        $newCoins = $vendingMachine->createCoins($command->getCoins());
+        $vendingMachine->setLastCoins($newCoins);
     }
 }
