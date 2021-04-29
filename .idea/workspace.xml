@@ -11,12 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b435894-42a6-4929-be68-c36c646f335f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/App/Application/Command/SetAvailableChangeCommandHandlerSpec.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/spec/App/Application/Command/SetProductStockCommandHandlerSpec.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Command/SetAvailableChangeCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Command/SetAvailableChangeCommandHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Command/SetProductStockCommand.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Application/Command/SetProductStockCommandHandler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/App/Application/Command/BuyProductCommandHandlerSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Application/Command/BuyProductCommandHandlerSpec.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/App/Domain/Model/VendingMachineSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Domain/Model/VendingMachineSpec.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Service/InMemoryVendingMachineRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Service/InMemoryVendingMachineRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Exception/InvalidArgumentsException.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Exception/InvalidArgumentsException.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,20 +104,20 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/spec/App" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/spec/App/Application/Command" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/spec/App/Application" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spec/App/Application/Command" />
+      <recent name="$PROJECT_DIR$/src/Application/Command" />
       <recent name="$PROJECT_DIR$/spec/App" />
       <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/src/Domain/Exception" />
-      <recent name="$PROJECT_DIR$/spec/App/Command" />
-      <recent name="$PROJECT_DIR$/src/Application/Command" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/spec/App/Application" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -130,7 +133,7 @@
       <workItem from="1619529802645" duration="62000" />
       <workItem from="1619529894063" duration="4312000" />
       <workItem from="1619599038452" duration="14116000" />
-      <workItem from="1619702597581" duration="663000" />
+      <workItem from="1619702597581" duration="2885000" />
     </task>
     <servers />
   </component>
@@ -154,10 +157,10 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="769" y="240" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1619531095977" />
-    <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1619693072657">
+    <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1619704571028">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
-    <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1619693072656" />
+    <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1619704571028" />
     <state x="469" y="190" key="SettingsEditor" timestamp="1619702608076">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -166,6 +169,10 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="763" y="472" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1920.1057@0.23.1920.1057" timestamp="1619599396736" />
+    <state x="667" y="306" width="586" height="490" key="find.popup" timestamp="1619703715120">
+      <screen x="0" y="23" width="1920" height="1057" />
+    </state>
+    <state x="667" y="306" width="586" height="490" key="find.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1619703715120" />
     <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1619609406028">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>

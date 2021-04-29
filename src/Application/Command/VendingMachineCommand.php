@@ -36,7 +36,7 @@ class VendingMachineCommand extends Command
                 $helper     = $this->getHelper('question');
                 $question   = new Question('');
                 $userInput  = $helper->ask($input, $output, $question);
-                $userAnswer = explode(',', $userInput);
+                $userAnswer = !empty($userInput) ? explode(',', $userInput) : [];
 
                 if (count($userAnswer) <= 1) {
                     throw new InvalidArgumentsException($userInput);
@@ -70,9 +70,21 @@ class VendingMachineCommand extends Command
                     case 'SERVICE':
                         $isProductStockService = !is_numeric($userAnswer[count($userAnswer) - 2]);
                         if ($isProductStockService) {
-                            // dispatch set product service
+                            $product = trim($userAnswer[count($userAnswer) - 2]);
+                            $stock   = intval($userAnswer[0]);
+                            $this->bus->dispatch(new SetProductStockCommand(
+                                $product,
+                                $stock
+                            ));
+                            $output->writeln("$product, $stock");
                         } else {
-                            // dispatch set available change
+                            $entryCoins = array_slice($userAnswer, 0, -1);
+                            $coins      = array_map(function ($coin) {
+                                return round($coin, 2);
+                            }, $entryCoins);
+                            $this->bus->dispatch(new SetAvailableChangeCommand($coins));
+                            $response = 'AVAILABLE-CHANGE, '.implode(', ', $coins);
+                            $output->writeln($response);
                         }
                         break;
                     default:
