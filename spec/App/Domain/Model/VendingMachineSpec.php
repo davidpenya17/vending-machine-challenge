@@ -54,8 +54,8 @@ class VendingMachineSpec extends ObjectBehavior
     public function it_should_return_correct_change()
     {
         //Given
-        $coins = [1];
-        $price = 0.65;
+        $coins  = [1];
+        $price  = 0.65;
         $change = [0.25, 0.10];
 
         //When
@@ -83,7 +83,7 @@ class VendingMachineSpec extends ObjectBehavior
     public function it_should_remove_coins()
     {
         //Given
-        $coins = [1, 0.25, 0.10];
+        $coins          = [1, 0.25, 0.10];
         $availableCoins = [0.05, 0.05, 0.10, 0.25, 1];
 
         //When
@@ -96,7 +96,7 @@ class VendingMachineSpec extends ObjectBehavior
     public function it_should_add_coins()
     {
         //Given
-        $coins = [1, 0.25];
+        $coins          = [1, 0.25];
         $availableCoins = [0.05, 0.05, 0.10, 0.10, 0.25, 0.25, 1, 1, 1, 0.25];
 
         //When

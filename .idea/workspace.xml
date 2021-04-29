@@ -11,21 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b435894-42a6-4929-be68-c36c646f335f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/phpspec.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/App/Application/Command/BuyProductCommandHandlerSpec.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/App/Domain/Model/JuiceSpec.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/App/Domain/Model/SodaSpec.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/App/Domain/Model/VendingMachineSpec.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/App/Domain/Model/WaterSpec.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Domain/Exception/InvalidProductNameException.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vending-machine-challenge.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vending-machine-challenge.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Model/VendingMachine.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Model/VendingMachine.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.php_cs.dist" beforeDir="false" afterPath="$PROJECT_DIR$/.php_cs.dist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/cs-fix.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/cs-fix.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +125,7 @@
       <updated>1619529801285</updated>
       <workItem from="1619529802645" duration="62000" />
       <workItem from="1619529894063" duration="4312000" />
-      <workItem from="1619599038452" duration="9362000" />
+      <workItem from="1619599038452" duration="10537000" />
     </task>
     <servers />
   </component>

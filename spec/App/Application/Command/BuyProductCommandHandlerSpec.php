@@ -36,9 +36,9 @@ class BuyProductCommandHandlerSpec extends ObjectBehavior
     {
         //Given
         $productName = 'WATER';
-        $coins = [1];
-        $stock = 10;
-        $price = 1;
+        $coins       = [1];
+        $stock       = 10;
+        $price       = 1;
         $vendingMachineRepository->getVendingMachine()->willReturn($vendingMachine);
         $vendingMachine->getProductByName($productName)->willReturn($product);
         $product->getStock()->willReturn($stock);
@@ -58,7 +58,7 @@ class BuyProductCommandHandlerSpec extends ObjectBehavior
     {
         //Given
         $productName = 'TEST';
-        $coins = [1];
+        $coins       = [1];
         $vendingMachineRepository->getVendingMachine()->willReturn($vendingMachine);
         $vendingMachine->getProductByName($productName)->willThrow(InvalidProductNameException::class);
 
@@ -78,8 +78,8 @@ class BuyProductCommandHandlerSpec extends ObjectBehavior
     {
         //Given
         $productName = 'WATER';
-        $coins = [1];
-        $stock = 0;
+        $coins       = [1];
+        $stock       = 0;
         $vendingMachineRepository->getVendingMachine()->willReturn($vendingMachine);
         $vendingMachine->getProductByName($productName)->willReturn($product);
         $product->getStock()->willReturn($stock);
@@ -101,9 +101,9 @@ class BuyProductCommandHandlerSpec extends ObjectBehavior
     {
         //Given
         $productName = 'WATER';
-        $coins = [0.25, 0.25, 0.25];
-        $stock = 10;
-        $price = 1;
+        $coins       = [0.25, 0.25, 0.25];
+        $stock       = 10;
+        $price       = 1;
         $vendingMachineRepository->getVendingMachine()->willReturn($vendingMachine);
         $vendingMachine->getProductByName($productName)->willReturn($product);
         $product->getStock()->willReturn($stock);
@@ -128,9 +128,9 @@ class BuyProductCommandHandlerSpec extends ObjectBehavior
         //Given
         $vendingMachine->setAvailableChange([1, 0.25, 0.05]);
         $productName = 'WATER';
-        $coins = [1];
-        $stock = 10;
-        $price = 1;
+        $coins       = [1];
+        $stock       = 10;
+        $price       = 1;
         $vendingMachineRepository->getVendingMachine()->willReturn($vendingMachine);
         $vendingMachine->getProductByName($productName)->willReturn($product);
         $product->getStock()->willReturn($stock);
