@@ -42,7 +42,7 @@ class SetProductStockCommandHandlerSpec extends ObjectBehavior
         $this->__invoke(new SetProductStockCommand($productName, $stock));
     }
 
-    public function it_should_throw_invalid_product_name(
+    public function it_should_throw_invalid_product_name_exception(
         VendingMachineRepository $vendingMachineRepository,
         VendingMachine $vendingMachine)
     {

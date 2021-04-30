@@ -43,7 +43,7 @@ class SetAvailableCoinsCommandHandlerSpec extends ObjectBehavior
         $this->__invoke(new SetAvailableCoinsCommand($coins));
     }
 
-    public function it_should_throw_invalid_coin(
+    public function it_should_throw_invalid_coin_exception(
         VendingMachineRepository $vendingMachineRepository,
         VendingMachine $vendingMachine)
     {

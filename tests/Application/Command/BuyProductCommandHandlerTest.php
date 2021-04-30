@@ -18,7 +18,6 @@ use PHPUnit\Framework\TestCase;
 
 class BuyProductCommandHandlerTest extends TestCase
 {
-
     private $vendingMachineRepositoryMock;
 
     protected function setUp(): void
@@ -26,12 +25,12 @@ class BuyProductCommandHandlerTest extends TestCase
         $this->vendingMachineRepositoryMock = $this->createMock(VendingMachineRepository::class);
     }
 
-    public function testThrowInvalidProductName(): void
+    public function testThrowInvalidProductNameException(): void
     {
         //Given
         $vendingMachine = new VendingMachine();
-        $productName = 'TEST';
-        $coins = [1];
+        $productName    = 'TEST';
+        $coins          = [1];
 
         //When
         $this->vendingMachineRepositoryMock->method('getVendingMachine')->willReturn($vendingMachine);
@@ -46,12 +45,12 @@ class BuyProductCommandHandlerTest extends TestCase
         $handler->__invoke($command);
     }
 
-    public function testThrowInvalidCoin(): void
+    public function testThrowInvalidCoinException(): void
     {
         //Given
         $vendingMachine = new VendingMachine();
-        $productName = 'WATER';
-        $coins = [1, 2];
+        $productName    = 'WATER';
+        $coins          = [1, 2];
 
         //When
         $this->vendingMachineRepositoryMock->method('getVendingMachine')->willReturn($vendingMachine);
@@ -66,15 +65,15 @@ class BuyProductCommandHandlerTest extends TestCase
         $handler->__invoke($command);
     }
 
-    public function testThrowInsufficientAvailableChange(): void
+    public function testThrowInsufficientAvailableChangeException(): void
     {
         //Given
-        $vendingMachine = new VendingMachine();
-        $productName = 'WATER';
-        $coins = [1];
-        $coin1          = new Coin(1);
-        $coin2          = new Coin(0.25);
-        $coin3          = new Coin(0.05);
+        $vendingMachine  = new VendingMachine();
+        $productName     = 'WATER';
+        $coins           = [1];
+        $coin1           = new Coin(1);
+        $coin2           = new Coin(0.25);
+        $coin3           = new Coin(0.05);
         $availableChange = [$coin1, $coin2, $coin3];
         $vendingMachine->setAvailableCoins($availableChange);
 
@@ -91,12 +90,12 @@ class BuyProductCommandHandlerTest extends TestCase
         $handler->__invoke($command);
     }
 
-    public function testThrowNoStockAvailable(): void
+    public function testThrowNoStockAvailableException(): void
     {
         //Given
         $vendingMachine = new VendingMachine();
-        $productName = 'WATER';
-        $coins = [1];
+        $productName    = 'WATER';
+        $coins          = [1];
 
         //When
         $this->vendingMachineRepositoryMock->method('getVendingMachine')->willReturn($vendingMachine);
@@ -113,12 +112,12 @@ class BuyProductCommandHandlerTest extends TestCase
         $handler->__invoke($command);
     }
 
-    public function testThrowInsufficientCoins(): void
+    public function testThrowInsufficientCoinsException(): void
     {
         //Given
         $vendingMachine = new VendingMachine();
-        $productName = 'SODA';
-        $coins = [1, 0.25, 0.10, 0.10];
+        $productName    = 'SODA';
+        $coins          = [1, 0.25, 0.10, 0.10];
 
         //When
         $this->vendingMachineRepositoryMock->method('getVendingMachine')->willReturn($vendingMachine);
@@ -136,12 +135,12 @@ class BuyProductCommandHandlerTest extends TestCase
     public function testBuyProduct(): void
     {
         //Given
-        $vendingMachine = new VendingMachine();
-        $productName = 'WATER';
-        $coins = [0.25, 0.25, 0.10, 0.10];
-        $coin1 = new Coin(0.05);
+        $vendingMachine        = new VendingMachine();
+        $productName           = 'WATER';
+        $coins                 = [0.25, 0.25, 0.10, 0.10];
+        $coin1                 = new Coin(0.05);
         $productStockAvailable = 9;
-        $productChange = [$coin1];
+        $productChange         = [$coin1];
 
         //When
         $this->vendingMachineRepositoryMock->method('getVendingMachine')->willReturn($vendingMachine);
@@ -156,5 +155,71 @@ class BuyProductCommandHandlerTest extends TestCase
 
         $this->assertEquals($vendingMachine->getProductByName($productName)->getStock(), $productStockAvailable);
         $this->assertEquals($vendingMachine->getLastProductChange(), $productChange);
+    }
+
+    public function testBuyThreeWatersAndThrowInsufficientAvailableCoinsException(): void
+    {
+        //Given
+        $vendingMachine = new VendingMachine();
+        $productName    = 'WATER';
+        $coins          = [1];
+        $coin1          = new Coin(0.25);
+        $coin2          = new Coin(0.10);
+        $productChange  = [$coin1, $coin2];
+
+        //When
+        $this->vendingMachineRepositoryMock->method('getVendingMachine')->willReturn($vendingMachine);
+        $this->expectException(InsufficientAvailableChangeException::class);
+
+        //Then
+        $handler = new BuyProductCommandHandler($this->vendingMachineRepositoryMock);
+        $command = new BuyProductCommand(
+            $productName,
+            $coins
+        );
+
+        // Buy first water
+        $handler->__invoke($command);
+        $this->assertEquals($vendingMachine->getProductByName($productName)->getStock(), 9);
+        $this->assertEquals($vendingMachine->getLastProductChange(), $productChange);
+
+        // Buy second water
+        $handler->__invoke($command);
+        $this->assertEquals($vendingMachine->getProductByName($productName)->getStock(), 8);
+        $this->assertEquals($vendingMachine->getLastProductChange(), $productChange);
+
+        // Buy third water
+        $handler->__invoke($command);
+    }
+
+    public function testBuyTwoSodasAndThrowNoStockAvailableException(): void
+    {
+        //Given
+        $vendingMachine = new VendingMachine();
+        $productName    = 'SODA';
+        $stock          = 1;
+        $coins          = [1, 1];
+        $coin1          = new Coin(0.25);
+        $productChange  = [$coin1, $coin1];
+
+        //When
+        $this->vendingMachineRepositoryMock->method('getVendingMachine')->willReturn($vendingMachine);
+        $vendingMachine->getProductByName($productName)->setStock($stock);
+        $this->expectException(NoStockAvailableException::class);
+
+        //Then
+        $handler = new BuyProductCommandHandler($this->vendingMachineRepositoryMock);
+        $command = new BuyProductCommand(
+            $productName,
+            $coins
+        );
+
+        // Buy first soda
+        $handler->__invoke($command);
+        $this->assertEquals($vendingMachine->getProductByName($productName)->getStock(), 0);
+        $this->assertEquals($vendingMachine->getLastProductChange(), $productChange);
+
+        // Buy second soda
+        $handler->__invoke($command);
     }
 }

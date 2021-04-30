@@ -6,7 +6,6 @@ namespace App\Tests\Application\Command;
 
 use App\Application\Command\SetAvailableCoinsCommand;
 use App\Application\Command\SetAvailableCoinsCommandHandler;
-use App\Application\Query\GetAvailableCoinsQuery;
 use App\Domain\Exception\InvalidCoinException;
 use App\Domain\Model\Coin;
 use App\Domain\Model\VendingMachine;
@@ -15,7 +14,6 @@ use PHPUnit\Framework\TestCase;
 
 class SetAvailableCoinsCommandHandlerTest extends TestCase
 {
-
     private $vendingMachineRepositoryMock;
 
     protected function setUp(): void
@@ -23,11 +21,11 @@ class SetAvailableCoinsCommandHandlerTest extends TestCase
         $this->vendingMachineRepositoryMock = $this->createMock(VendingMachineRepository::class);
     }
 
-    public function testThrowInvalidCoin(): void
+    public function testThrowInvalidCoinException(): void
     {
         //Given
         $vendingMachine = new VendingMachine();
-        $coins = [1, 2];
+        $coins          = [1, 2];
 
         //When
         $this->vendingMachineRepositoryMock->method('getVendingMachine')->willReturn($vendingMachine);
@@ -45,10 +43,10 @@ class SetAvailableCoinsCommandHandlerTest extends TestCase
     {
         //Given
         $vendingMachine = new VendingMachine();
-        $coins = [1, 0.25, 0.10];
-        $coin1 = new Coin(1);
-        $coin2 = new Coin(0.25);
-        $coin3 = new Coin(0.10);
+        $coins          = [1, 0.25, 0.10];
+        $coin1          = new Coin(1);
+        $coin2          = new Coin(0.25);
+        $coin3          = new Coin(0.10);
         $availableCoins = [$coin1, $coin2, $coin3];
 
         //When

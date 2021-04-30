@@ -11,19 +11,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b435894-42a6-4929-be68-c36c646f335f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spec/App/Domain/Model/CoinSpec.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Query/GetAvailableCoinsQuery.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Application/Query/GetProductStockQuery.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Application/Command/ReturnCoinsCommandHandlerTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Application/Command/SetAvailableCoinsCommandHandlerTest.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Application/Command/SetProductStockCommandHandlerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env.test" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.php_cs.dist" beforeDir="false" afterPath="$PROJECT_DIR$/.php_cs.dist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/App/Application/Command/BuyProductCommandHandlerSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Application/Command/BuyProductCommandHandlerSpec.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/App/Application/Command/SetAvailableCoinsCommandHandlerSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Application/Command/SetAvailableCoinsCommandHandlerSpec.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/App/Application/Command/SetProductStockCommandHandlerSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Application/Command/SetProductStockCommandHandlerSpec.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/App/Domain/Model/JuiceSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Domain/Model/JuiceSpec.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/App/Domain/Model/SodaSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Domain/Model/SodaSpec.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/spec/App/Domain/Model/VendingMachineSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Domain/Model/VendingMachineSpec.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Application/Command/VendingMachineCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Exception/InvalidCoinsException.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Model/VendingMachine.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Model/VendingMachine.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spec/App/Domain/Model/WaterSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Domain/Model/WaterSpec.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Application/Command/BuyProductCommandHandlerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application/Command/BuyProductCommandHandlerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Application/Command/ReturnCoinsCommandHandlerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application/Command/ReturnCoinsCommandHandlerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Application/Command/SetAvailableCoinsCommandHandlerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application/Command/SetAvailableCoinsCommandHandlerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Application/Command/SetProductStockCommandHandlerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application/Command/SetProductStockCommandHandlerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/bootstrap.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +154,7 @@
       <workItem from="1619599038452" duration="14116000" />
       <workItem from="1619702597581" duration="4402000" />
       <workItem from="1619711971560" duration="11436000" />
-      <workItem from="1619777446131" duration="1841000" />
+      <workItem from="1619777446131" duration="4659000" />
     </task>
     <servers />
   </component>
@@ -175,11 +178,11 @@
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="769" y="240" key="#com.intellij.ide.util.MemberChooser/0.23.1920.1057@0.23.1920.1057" timestamp="1619712647792" />
-    <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1619777912526">
+    <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1619793615402">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="524" y="264" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1440.877@0.23.1440.877" timestamp="1619729214768" />
-    <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1619777912526" />
+    <state x="698" y="313" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1920.1057@0.23.1920.1057" timestamp="1619793615402" />
     <state width="1878" height="290" key="GridCell.Tab.0.bottom" timestamp="1619774828674">
       <screen x="0" y="23" width="1920" height="1057" />
     </state>
@@ -213,10 +216,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="385" y="211" key="run.anything.popup/0.23.1440.877@0.23.1440.877" timestamp="1619727034021" />
-    <state x="469" y="218" width="670" height="561" key="search.everywhere.popup" timestamp="1619726472336">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup" timestamp="1619792754963">
+      <screen x="0" y="23" width="1920" height="1057" />
     </state>
     <state x="469" y="218" width="670" height="561" key="search.everywhere.popup/0.23.1440.877@0.23.1440.877" timestamp="1619726472336" />
-    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1619609406028" />
+    <state x="625" y="258" width="670" height="676" key="search.everywhere.popup/0.23.1920.1057@0.23.1920.1057" timestamp="1619792754963" />
   </component>
 </project>

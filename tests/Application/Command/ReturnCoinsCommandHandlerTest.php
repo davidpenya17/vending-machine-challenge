@@ -6,7 +6,6 @@ namespace App\Tests\Application\Command;
 
 use App\Application\Command\ReturnCoinsCommand;
 use App\Application\Command\ReturnCoinsCommandHandler;
-use App\Application\Query\GetLastCoinsQuery;
 use App\Domain\Exception\InvalidCoinException;
 use App\Domain\Model\Coin;
 use App\Domain\Model\VendingMachine;
@@ -15,7 +14,6 @@ use PHPUnit\Framework\TestCase;
 
 class ReturnCoinsCommandHandlerTest extends TestCase
 {
-
     private $vendingMachineRepositoryMock;
 
     protected function setUp(): void
@@ -23,11 +21,11 @@ class ReturnCoinsCommandHandlerTest extends TestCase
         $this->vendingMachineRepositoryMock = $this->createMock(VendingMachineRepository::class);
     }
 
-    public function testThrowInvalidCoin(): void
+    public function testThrowInvalidCoinException(): void
     {
         //Given
         $vendingMachine = new VendingMachine();
-        $coins = [1, 2];
+        $coins          = [1, 2];
 
         //When
         $this->vendingMachineRepositoryMock->method('getVendingMachine')->willReturn($vendingMachine);
@@ -45,10 +43,10 @@ class ReturnCoinsCommandHandlerTest extends TestCase
     {
         //Given
         $vendingMachine = new VendingMachine();
-        $coins = [1, 0.25];
-        $coin1 = new Coin(1);
-        $coin2 = new Coin(0.25);
-        $returnCoins = [$coin1, $coin2];
+        $coins          = [1, 0.25];
+        $coin1          = new Coin(1);
+        $coin2          = new Coin(0.25);
+        $returnCoins    = [$coin1, $coin2];
 
         //When
         $this->vendingMachineRepositoryMock->method('getVendingMachine')->willReturn($vendingMachine);

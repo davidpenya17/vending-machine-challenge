@@ -29,7 +29,7 @@ class VendingMachineSpec extends ObjectBehavior
         $product->getName()->shouldReturn($productName);
     }
 
-    public function it_should_throw_invalid_product_name()
+    public function it_should_throw_invalid_product_name_exception()
     {
         //Given
         $productName = 'some-invalid-name';
@@ -55,7 +55,7 @@ class VendingMachineSpec extends ObjectBehavior
         $this->getLastProductChange()->shouldReturn($change);
     }
 
-    public function it_should_throw_insufficient_available_change(
+    public function it_should_throw_insufficient_available_change_exception(
         Coin $coin1,
         Coin $coin2,
         Coin $coin3
@@ -151,5 +151,21 @@ class VendingMachineSpec extends ObjectBehavior
 
         //Then
         $this->getLastProductChange()->shouldBe($productChange);
+    }
+
+    public function it_should_set_last_coins(
+        Coin $coin1,
+        Coin $coin2
+    ) {
+        //Given
+        $coin1->getValue()->willReturn(1);
+        $coin2->getValue()->willReturn(0.25);
+        $lastCoins = [$coin1, $coin2];
+
+        //When
+        $this->setLastCoins($lastCoins);
+
+        //Then
+        $this->getLastCoins()->shouldBe($lastCoins);
     }
 }

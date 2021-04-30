@@ -45,7 +45,7 @@ class BuyProductCommandHandlerSpec extends ObjectBehavior
         $this->__invoke(new BuyProductCommand($productName, $coins));
     }
 
-    public function it_should_throw_invalid_product_name(
+    public function it_should_throw_invalid_product_name_exception(
         VendingMachineRepository $vendingMachineRepository,
         VendingMachine $vendingMachine)
     {
@@ -64,7 +64,7 @@ class BuyProductCommandHandlerSpec extends ObjectBehavior
             )]);
     }
 
-    public function it_should_throw_no_stock_available(
+    public function it_should_throw_no_stock_available_exception(
         VendingMachineRepository $vendingMachineRepository,
         VendingMachine $vendingMachine,
         Product $product)
@@ -85,7 +85,7 @@ class BuyProductCommandHandlerSpec extends ObjectBehavior
             )]);
     }
 
-    public function it_should_throw_insufficient_coins(
+    public function it_should_throw_insufficient_coins_exception(
         VendingMachineRepository $vendingMachineRepository,
         VendingMachine $vendingMachine,
         Product $product)
@@ -106,7 +106,7 @@ class BuyProductCommandHandlerSpec extends ObjectBehavior
             )]);
     }
 
-    public function it_should_throw_insufficient_available_change(
+    public function it_should_throw_insufficient_available_change_exception(
         VendingMachineRepository $vendingMachineRepository,
         VendingMachine $vendingMachine,
         Product $product)

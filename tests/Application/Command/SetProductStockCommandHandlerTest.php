@@ -6,7 +6,6 @@ namespace App\Tests\Application\Command;
 
 use App\Application\Command\SetProductStockCommand;
 use App\Application\Command\SetProductStockCommandHandler;
-use App\Application\Query\GetProductStockQuery;
 use App\Domain\Exception\InvalidProductNameException;
 use App\Domain\Model\VendingMachine;
 use App\Domain\Service\VendingMachineRepository;
@@ -14,7 +13,6 @@ use PHPUnit\Framework\TestCase;
 
 class SetProductStockCommandHandlerTest extends TestCase
 {
-
     private $vendingMachineRepositoryMock;
 
     protected function setUp(): void
@@ -22,12 +20,12 @@ class SetProductStockCommandHandlerTest extends TestCase
         $this->vendingMachineRepositoryMock = $this->createMock(VendingMachineRepository::class);
     }
 
-    public function testThrowInvalidProductName(): void
+    public function testThrowInvalidProductNameException(): void
     {
         //Given
         $vendingMachine = new VendingMachine();
-        $productName = 'TEST';
-        $stock = 20;
+        $productName    = 'TEST';
+        $stock          = 20;
 
         //When
         $this->vendingMachineRepositoryMock->method('getVendingMachine')->willReturn($vendingMachine);
@@ -46,8 +44,8 @@ class SetProductStockCommandHandlerTest extends TestCase
     {
         //Given
         $vendingMachine = new VendingMachine();
-        $productName = 'WATER';
-        $stock = 20;
+        $productName    = 'WATER';
+        $stock          = 20;
 
         //When
         $this->vendingMachineRepositoryMock->method('getVendingMachine')->willReturn($vendingMachine);
