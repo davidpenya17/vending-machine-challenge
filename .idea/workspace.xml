@@ -11,22 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2b435894-42a6-4929-be68-c36c646f335f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env.test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.php_cs.dist" beforeDir="false" afterPath="$PROJECT_DIR$/.php_cs.dist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/App/Application/Command/BuyProductCommandHandlerSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Application/Command/BuyProductCommandHandlerSpec.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/App/Application/Command/SetAvailableCoinsCommandHandlerSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Application/Command/SetAvailableCoinsCommandHandlerSpec.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/App/Application/Command/SetProductStockCommandHandlerSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Application/Command/SetProductStockCommandHandlerSpec.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/App/Domain/Model/JuiceSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Domain/Model/JuiceSpec.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/App/Domain/Model/SodaSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Domain/Model/SodaSpec.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/App/Domain/Model/VendingMachineSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Domain/Model/VendingMachineSpec.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spec/App/Domain/Model/WaterSpec.php" beforeDir="false" afterPath="$PROJECT_DIR$/spec/App/Domain/Model/WaterSpec.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Application/Command/BuyProductCommandHandlerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application/Command/BuyProductCommandHandlerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Application/Command/ReturnCoinsCommandHandlerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application/Command/ReturnCoinsCommandHandlerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Application/Command/SetAvailableCoinsCommandHandlerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application/Command/SetAvailableCoinsCommandHandlerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Application/Command/SetProductStockCommandHandlerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Application/Command/SetProductStockCommandHandlerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/bootstrap.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,7 +139,7 @@
       <workItem from="1619599038452" duration="14116000" />
       <workItem from="1619702597581" duration="4402000" />
       <workItem from="1619711971560" duration="11436000" />
-      <workItem from="1619777446131" duration="4659000" />
+      <workItem from="1619777446131" duration="4827000" />
     </task>
     <servers />
   </component>

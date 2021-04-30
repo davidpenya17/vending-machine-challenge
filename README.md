@@ -6,8 +6,10 @@
 
 ## How it works
   - Get water product without exact change: 
-  ```0.25, 0.25, 0.10, 0.10, GET-WATER```
-  ```SODA. 0.05```
+  ```
+    0.25, 0.25, 0.10, 0.10, GET-WATER
+    -> SODA, 0.05
+  ```
   
   - Get soda product with exact change:
   ```
