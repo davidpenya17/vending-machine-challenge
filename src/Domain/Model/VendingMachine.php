@@ -25,14 +25,14 @@ class VendingMachine
             new Soda(10),
         ];
         $this->availableCoins = [
-            new Coin(0.05),
-            new Coin(0.05),
-            new Coin(0.10),
-            new Coin(0.10),
-            new Coin(0.25),
-            new Coin(0.25),
-            new Coin(1),
-            new Coin(1),
+            new Coin(Coin::FIVE_CENTS),
+            new Coin(Coin::FIVE_CENTS),
+            new Coin(Coin::TEN_CENTS),
+            new Coin(Coin::TEN_CENTS),
+            new Coin(Coin::TWENTY_FIVE_CENTS),
+            new Coin(Coin::TWENTY_FIVE_CENTS),
+            new Coin(Coin::ONE_EURO),
+            new Coin(Coin::ONE_EURO),
         ];
         $this->lastProductChange = [];
         $this->lastCoins         = [];
@@ -154,8 +154,7 @@ class VendingMachine
         foreach ($coins as $coin) {
             $totalAmountCoins += $coin->getValue();
         }
-
-        $productChange  = $totalAmountCoins - $price;
+        $productChange  = round($totalAmountCoins - $price, 2);
         $changeCoins    = [];
         $availableCoins = $this->getAvailableCoins();
         usort($availableCoins, function (Coin $coin1, Coin $coin2

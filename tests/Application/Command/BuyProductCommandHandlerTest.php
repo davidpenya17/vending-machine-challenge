@@ -46,7 +46,7 @@ class BuyProductCommandHandlerTest extends TestCase
         $handler->__invoke($command);
     }
 
-    public function testThrowInvalidCoins(): void
+    public function testThrowInvalidCoin(): void
     {
         //Given
         $vendingMachine = new VendingMachine();
@@ -131,5 +131,30 @@ class BuyProductCommandHandlerTest extends TestCase
             $coins
         );
         $handler->__invoke($command);
+    }
+
+    public function testBuyProduct(): void
+    {
+        //Given
+        $vendingMachine = new VendingMachine();
+        $productName = 'WATER';
+        $coins = [0.25, 0.25, 0.10, 0.10];
+        $coin1 = new Coin(0.05);
+        $productStockAvailable = 9;
+        $productChange = [$coin1];
+
+        //When
+        $this->vendingMachineRepositoryMock->method('getVendingMachine')->willReturn($vendingMachine);
+
+        //Then
+        $handler = new BuyProductCommandHandler($this->vendingMachineRepositoryMock);
+        $command = new BuyProductCommand(
+            $productName,
+            $coins
+        );
+        $handler->__invoke($command);
+
+        $this->assertEquals($vendingMachine->getProductByName($productName)->getStock(), $productStockAvailable);
+        $this->assertEquals($vendingMachine->getLastProductChange(), $productChange);
     }
 }

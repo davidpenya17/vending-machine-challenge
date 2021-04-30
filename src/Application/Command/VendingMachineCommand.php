@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace App\Application\Command;
 
+use App\Application\Query\GetAvailableCoinsQuery;
 use App\Application\Query\GetLastCoinsQuery;
 use App\Application\Query\GetLastProductChangeQuery;
+use App\Application\Query\GetProductStockQuery;
 use App\Domain\Exception\InvalidActionException;
 use App\Domain\Exception\InvalidArgumentsException;
 use Symfony\Component\Console\Command\Command;
@@ -19,17 +21,23 @@ class VendingMachineCommand extends Command
     private MessageBusInterface $bus;
     private GetLastProductChangeQuery $getLastProductChangeQuery;
     private GetLastCoinsQuery $getLastCoinsQuery;
+    private GetProductStockQuery $getProductStockQuery;
+    private GetAvailableCoinsQuery $getAvailableCoinsQuery;
 
     protected static $defaultName = 'app:vending-machine';
 
     public function __construct(
         MessageBusInterface $bus,
         GetLastProductChangeQuery $getLastProductChangeQuery,
-        GetLastCoinsQuery $getLastCoinsQuery)
+        GetLastCoinsQuery $getLastCoinsQuery,
+        GetProductStockQuery $getProductStockQuery,
+        GetAvailableCoinsQuery $getAvailableCoinsQuery)
     {
         $this->bus                       = $bus;
         $this->getLastProductChangeQuery = $getLastProductChangeQuery;
         $this->getLastCoinsQuery         = $getLastCoinsQuery;
+        $this->getProductStockQuery      = $getProductStockQuery;
+        $this->getAvailableCoinsQuery    = $getAvailableCoinsQuery;
         parent::__construct();
     }
 
@@ -84,14 +92,16 @@ class VendingMachineCommand extends Command
                                 $product,
                                 $stock
                             ));
-                            $output->writeln("$product, $stock");
+                            $productStock = $this->getProductStockQuery->getResult($product);
+                            $output->writeln("$product, $productStock");
                         } else {
                             $entryCoins = array_slice($userAnswer, 0, -1);
                             $coins      = array_map(function ($coin) {
                                 return round($coin, 2);
                             }, $entryCoins);
                             $this->bus->dispatch(new SetAvailableCoinsCommand($coins));
-                            $response = 'AVAILABLE-CHANGE, '.implode(', ', $coins);
+                            $availableCoins = $this->getAvailableCoinsQuery->getResult();
+                            $response       = 'AVAILABLE-CHANGE, '.implode(', ', $availableCoins);
                             $output->writeln($response);
                         }
                         break;

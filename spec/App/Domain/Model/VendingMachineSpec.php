@@ -40,11 +40,12 @@ class VendingMachineSpec extends ObjectBehavior
             ->during('getProductByName', [$productName]);
     }
 
-    public function it_should_return_correct_change()
-    {
+    public function it_should_return_correct_change(
+        Coin $coin
+    ) {
         //Given
-        $coin3 = new Coin(1);
-        $coins = [$coin3];
+        $coin->getValue()->willReturn(1);
+        $coins = [$coin];
         $price = 0.65;
 
         //When
@@ -54,12 +55,15 @@ class VendingMachineSpec extends ObjectBehavior
         $this->getLastProductChange()->shouldReturn($change);
     }
 
-    public function it_should_throw_insufficient_available_change()
-    {
+    public function it_should_throw_insufficient_available_change(
+        Coin $coin1,
+        Coin $coin2,
+        Coin $coin3
+    ) {
         //Given
-        $coin1          = new Coin(1);
-        $coin2          = new Coin(0.10);
-        $coin3          = new Coin(0.05);
+        $coin1->getValue()->willReturn(1);
+        $coin2->getValue()->willReturn(0.10);
+        $coin3->getValue()->willReturn(0.05);
         $coins          = [$coin1];
         $availableCoins = [$coin1, $coin2, $coin3];
         $price          = 0.65;
@@ -73,44 +77,58 @@ class VendingMachineSpec extends ObjectBehavior
             ->during('calculateProductChange', [$price, $coins]);
     }
 
-    public function it_should_remove_coins()
-    {
+    public function it_should_remove_coins(
+        Coin $coin1,
+        Coin $coin2,
+        Coin $coin3,
+        Coin $coin4
+    ) {
         //Given
-        $coin1          = new Coin(1);
-        $coin2          = new Coin(0.25);
-        $coin3          = new Coin(0.10);
-        $coin4          = new Coin(0.05);
-        $coins          = [$coin1, $coin2, $coin3];
+        $coin1->getValue()->willReturn(1);
+        $coin2->getValue()->willReturn(0.25);
+        $coin3->getValue()->willReturn(0.10);
+        $coin4->getValue()->willReturn(0.05);
+        $coins          = [$coin1, $coin2];
         $availableCoins = [$coin4, $coin4, $coin3, $coin2, $coin1];
+        $this->setAvailableCoins($availableCoins);
 
         //When
         $this->removeCoins($coins);
 
         //Then
-        $this->getAvailableCoins()->shouldReturn($availableCoins);
+        $this->getAvailableCoins()->shouldReturn([$coin4, $coin4, $coin3]);
     }
 
-    public function it_should_add_coins()
-    {
+    public function it_should_add_coins(
+        Coin $coin1,
+        Coin $coin2,
+        Coin $coin3,
+        Coin $coin4
+    ) {
         //Given
-        $coin1          = new Coin(1);
-        $coin2          = new Coin(0.25);
-        $coin3          = new Coin(0.10);
-        $coin4          = new Coin(0.05);
+        $coin1->getValue()->willReturn(1);
+        $coin2->getValue()->willReturn(0.25);
+        $coin3->getValue()->willReturn(0.10);
+        $coin4->getValue()->willReturn(0.05);
         $coins          = [$coin1, $coin2];
-        $availableCoins = [$coin4, $coin4, $coin3, $coin3, $coin2, $coin2, $coin1, $coin1, $coin1, $coin2];
+        $availableCoins = [$coin4, $coin3];
+        $this->setAvailableCoins($availableCoins);
 
         //When
         $this->addCoins($coins);
 
         //Then
-        $this->getAvailableCoins()->shouldBe($availableCoins);
+        $this->getAvailableCoins()->shouldBe([$coin4, $coin3, $coin1, $coin2]);
     }
 
-    public function it_should_set_available_change()
-    {
+    public function it_should_set_available_change(
+        Coin $coin1,
+        Coin $coin2
+    ) {
         //Given
-        $coins = [1, 0.25];
+        $coin1->getValue()->willReturn(1);
+        $coin2->getValue()->willReturn(0.25);
+        $coins = [$coin1, $coin2];
 
         //When
         $this->setAvailableCoins($coins);
@@ -119,10 +137,14 @@ class VendingMachineSpec extends ObjectBehavior
         $this->getAvailableCoins()->shouldBe($coins);
     }
 
-    public function it_should_set_last_product_change()
-    {
+    public function it_should_set_last_product_change(
+        Coin $coin1,
+        Coin $coin2
+    ) {
         //Given
-        $productChange = [1, 0.25];
+        $coin1->getValue()->willReturn(1);
+        $coin2->getValue()->willReturn(0.25);
+        $productChange = [$coin1, $coin2];
 
         //When
         $this->setLastProductChange($productChange);
